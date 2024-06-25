@@ -115,7 +115,7 @@ export default function Home() {
 				</button>
 			</div>
 
-			<GoogleMaps data={dataArray} />
+			<GoogleMaps data={dataArray} selected={selectedData} />
 		</main>
 	);
 }

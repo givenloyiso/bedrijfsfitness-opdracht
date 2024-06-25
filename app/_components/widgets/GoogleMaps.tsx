@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const bounds = {
 	ne: {
@@ -24,6 +24,9 @@ export default function GoogleMaps({ data }: { data: any[] }) {
 		zoom: 11,
 	};
 
+	// Hier zou ik dus de bounds van de data array kunnen berekenen
+	// en die als default props kunnen meegeven aan GoogleMapReact
+
 	return (
 		// Important! Always set the container height explicitly
 		<div className='w-4/5'>
@@ -32,15 +35,14 @@ export default function GoogleMaps({ data }: { data: any[] }) {
 				defaultCenter={defaultProps.center}
 				defaultZoom={defaultProps.zoom}>
 				{/* Loop through the data array and display markers */}
-				{data.map((item) => (
+				{/* {data?.map((item) => (
 					<AnyReactComponent
 						key={item.id}
-						lat={item.lat}
-						lng={item.lng}
+						lat={item.latitude}
+						lng={item.longitude}
 						text={item.companyName}
 					/>
-				))}
-				)
+				))} */}
 			</GoogleMapReact>
 		</div>
 	);
